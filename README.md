@@ -1,4 +1,5 @@
-[![build status](https://code.tritum.de/flinke/daily_watchword/badges/master/build.svg)](https://code.tritum.de/flinke/daily_watchword/commits/master)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd6835f1a9a74134928efa89a855f1d0)](https://www.codacy.com/app/TritumFlinke/daily_watchword?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tritum/daily_watchword&amp;utm_campaign=Badge_Grade)
 
 TYPO3 Extension daily_watchword
 ===============================
