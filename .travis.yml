@@ -50,7 +50,7 @@ script:
   - >
     echo;
     echo "Running php-cs-fixer";
-    .Build/bin/php-cs-fixer fix --config=Build/Scripts/.php_cs -v --dry-run --using-cache=no --path-mode=intersection ./;
+    .Build/Scripts/php-cs-fixer fix --config=Build/Scripts/.php_cs -v --dry-run --using-cache=no --path-mode=intersection ./;
   - >
     echo;
     export typo3DatabaseName="typo3";
