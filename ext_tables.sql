@@ -11,5 +11,5 @@ CREATE TABLE tx_dailywatchword_domain_model_watchword (
     teachText VARCHAR(1024) NOT NULL,
 
     PRIMARY KEY (uid),
-    KEY parent (pid),
+    KEY parent (pid)
 );
