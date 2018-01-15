@@ -1,0 +1,8 @@
+# cat=basic; type=string; label= Download Url: Specifies the url which is used for downloading the watchwords zip archive. The "%s" will be replaced with the current year. Default was: http://www.losungen.de/fileadmin/media-losungen/download/Losung_%s_CSV.zip
+downloadURL = http://www.losungen.de/fileadmin/media-losungen/download/Losung_%s_CSV.zip
+
+# cat=basic; type=string; label= File Name: The name of the csv file in the zip archive where the watchwords are stored. The "%s" will be replaced with the current year. Default was: Losungen Free %s.csv
+fileName = Losungen Free %s.csv
+
+# cat=basic; type=string; label= Download Directory: The Directory where the Watchword File will be stored. The "%s" will be replaced with the current year. Default was: typo3temp/daily_watchword/Losung_%s_CSV.zip
+storageFilePath = typo3temp/daily_watchword/Losung_%s_CSV.zip

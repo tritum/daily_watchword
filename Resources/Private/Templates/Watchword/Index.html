@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Default"/>
+<f:section name="content">
+    <div class="daily-watchword columns-wrap">
+        <div class="column-1_12">
+            <time title="{f:format.date(date:watchword.date, format:'%A')}" datetime="{f:format.date(date:watchword.date, format:'Y-m-d')}" class="tile">
+                <div class="day"><f:format.date format="d.">{watchword.date}</f:format.date></div>
+                <div class="month-year"><f:format.date format="%b %g">{watchword.date}</f:format.date></div>
+            </time>
+        </div>
+        <div class="column-11_12">
+            <p class="verse">{watchword.watchwordText} <small>{watchword.watchwordVerse}</small></p>
+            <p class="teach-verse">{watchword.teachText} <small>{watchword.teachVerse}</small></p>
+            <p class="copyright">&copy; <f:link.typolink parameter="http://www.herrnhuter.de" target="_blank">Evangelische Brüder-Unität</f:link.typolink> - Herrnhuter Brüdergemeine. <f:translate key="furtherInformation" /> <f:link.typolink parameter="http://www.losungen.de" target="_blank">losungen.de</f:link.typolink>.</p>
+        </div>
+    </div>
+</f:section>
+</html>

@@ -1,0 +1,8 @@
+stages:
+  - test
+cs_fixer:
+  stage: test
+  script:
+    - "Build/Scripts/runCsFixer.sh dryrun"
+  tags:
+    - typo3_extension

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-01-04T15:40:45Z" product-name="dailyWatchword">
+        <header/>
+        <body>
+            <trans-unit id="mainHeadline">
+                <source>Watchword of the Day</source>
+                <target>Die Losung heute</target>
+            </trans-unit>
+            <trans-unit id="furtherInformation">
+                <source>For more information visit</source>
+                <target>Weitere Informationen unter</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,47 @@
+{
+    "name": "tritum/daily_watchword",
+    "description": "Displays the Watchword of the day",
+    "keywords" :[
+        "TYPO3",
+        "extension",
+        "watchword",
+        "losung",
+        "bibel",
+        "bibelverse"
+    ],
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Falko Linke",
+            "email": "falko.linke@tritum.de"
+        }
+    ],
+    "require": {
+        "typo3/cms": "^8.7"
+    },
+    "require-dev": {
+        "nimut/testing-framework": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tritum\\DailyWatchword\\": "Classes"
+        }
+    },
+    "replace": {
+        "daily_watchword": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web",
+            "Package": {
+                "partOfMinimalUsableSystem": true
+            }
+        }
+    }
+}
