@@ -2,19 +2,8 @@
 if (PHP_SAPI !== 'cli') {
     die('This script supports command line usage only. Please check your command.');
 }
-
-$_PHP_CS_FIXER_SEARCH_PATHS = str_replace('/', '\/', getenv('_PHP_CS_FIXER_SEARCH_PATHS'));
-$fixFilesInFolders = json_decode($_PHP_CS_FIXER_SEARCH_PATHS);
-$finder = PhpCsFixer\Finder::create()->in($fixFilesInFolders);
-
-// all sniffers needed for PSR-2
-// and additionally:
-//  - Remove leading slashes in use clauses.
-//  - PHP single-line arrays should not have trailing comma.
-//  - Single-line whitespace before closing semicolon are prohibited.
-//  - Remove unused use statements in the PHP source code
-//  - Ensure Concatenation to have at least one whitespace around
-//  - Remove trailing whitespace at the end of blank lines.
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/../');
 return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
     ->setRules([
@@ -42,6 +31,8 @@ return PhpCsFixer\Config::create()
         'native_function_casing' => true,
         'self_accessor' => true,
         'no_short_bool_cast' => true,
-        'no_unneeded_control_parentheses' => true
+        'no_unneeded_control_parentheses' => true,
+        'phpdoc_no_empty_return' => true,
+        'phpdoc_trim' => true
     ])
     ->setFinder($finder);
