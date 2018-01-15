@@ -20,6 +20,9 @@ Daily Watchword Documentation
     The content of this document is related to TYPO3,
     a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
 
+    The extension is officially authorized by the Evangelische Brüder-Unität Herrnhuter Brüdergemeine.
+    `<www.ebu.de>`_ and
+    `<https://www.losungen.de>`_
 
 ------------------
 
