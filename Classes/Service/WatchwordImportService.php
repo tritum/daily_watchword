@@ -160,14 +160,14 @@ class WatchwordImportService
     }
 
     /**
-     * encodes String from Windows-1252 to UTF-8
+     * encodes String to UTF-8 encoding
      * @param string $inputString
      * @return string
      */
     public function encondeStringToUTF8($inputString)
     {
-        if (mb_detect_encoding($inputString, 'UTF-8', true) === false) {
-            $inputString = mb_convert_encoding($inputString, 'UTF-8', 'Windows-1252');
+        if (($encoding = mb_detect_encoding($inputString, mb_list_encodings())) !== 'UTF-8') {
+            $inputString = mb_convert_encoding($inputString, 'UTF-8', $encoding);
         }
         return $inputString;
     }

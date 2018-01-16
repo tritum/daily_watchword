@@ -85,8 +85,10 @@ class WatchwordImportServiceTest extends \Nimut\TestingFramework\TestCase\UnitTe
      */
     public function detectEncodingReturnsFalse($inputString)
     {
-        $encodingTest = mb_detect_encoding($inputString, 'UTF-8', true);
-        $this->assertFalse($encodingTest);
+        $encoding = mb_detect_encoding($inputString, mb_list_encodings());
+        $encodedTest = mb_convert_encoding($inputString,'UTF-8', $encoding);
+
+        $this->assertEquals('UTF-8', mb_detect_encoding($encodedTest, mb_list_encodings(), true));
     }
 
     /**
