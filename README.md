@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/tritum/daily_watchword.svg?branch=master)](https://travis-ci.org/tritum/daily_watchword)
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/daa5737f330d463db690578bcd1e9a32)](https://www.codacy.com/app/tritum/daily_watchword?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tritum/daily_watchword&amp;utm_campaign=Badge_Grade)
 
 TYPO3 Extension daily_watchword

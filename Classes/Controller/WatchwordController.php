@@ -39,9 +39,9 @@ class WatchwordController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function indexAction()
     {
-        $databaseAndDateUtility = $this->objectManager->get(DatabaseChecksAndDateUtility::class);
-        $currentDate = $databaseAndDateUtility->getdate();
-        if ($databaseAndDateUtility->checkIfDateExitsInDB()) {
+        $dbDateUtility = $this->objectManager->get(DatabaseChecksAndDateUtility::class);
+        $currentDate = $dbDateUtility->getdate();
+        if ($dbDateUtility->checkIfDateExitsInDB()) {
             $watchword = $this->objectManager->get(Watchword::class);
             $watchword->readCurrentWatchword($currentDate);
             $this->view->assign('watchword', $watchword);
