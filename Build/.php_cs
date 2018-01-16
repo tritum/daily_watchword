@@ -33,6 +33,7 @@ return PhpCsFixer\Config::create()
         'no_short_bool_cast' => true,
         'no_unneeded_control_parentheses' => true,
         'phpdoc_no_empty_return' => true,
-        'phpdoc_trim' => true
+        'phpdoc_trim' => true,
+        'method_argument_space' => false
     ])
     ->setFinder($finder);

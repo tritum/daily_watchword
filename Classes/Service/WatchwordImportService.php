@@ -265,8 +265,7 @@ class WatchwordImportService
             $result = $this->writeToTypo3TempDir($downloadedData, $this->settingsArray['storageFilePath']);
             // Error msg if file saving fails
             if ($result === false) {
-                $GLOBALS['BE_USER']->simplelog('Writing in TYPO3 temp directory failed in Download Watchwords task',
-                    'daily_watchword', 3);
+                $GLOBALS['BE_USER']->simplelog('Writing in TYPO3 temp directory failed in Download Watchwords task', 'daily_watchword', 3);
                 $flashMessages->savingToT3TempDirFailed();
                 return false;
             }
