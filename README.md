@@ -4,7 +4,7 @@
 TYPO3 Extension daily_watchword
 ===============================
 
-Version 1.0
+Version 1.0.1
 
 The extension displays the watchword of the day from the Herrnhuter Brüdergemeine `<http://www.ebu.de>`.
 It shows the current date and two verses from the bible. One from the Old and one from the New Testament.
