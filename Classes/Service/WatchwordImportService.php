@@ -118,6 +118,11 @@ class WatchwordImportService
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $downloadUrl);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, 0);
+        curl_setopt($curl, CURLOPT_FAILONERROR, true);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_AUTOREFERER, true);
+        curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 5);
         curl_setopt($curl, CURLOPT_TIMEOUT, 60);
         $contend = curl_exec($curl);
@@ -145,18 +150,24 @@ class WatchwordImportService
      */
     public function importDataFromZipArchive($zipFilePath, $fileName)
     {
-        $handle = zip_open($zipFilePath);
-        while (($entry = zip_read($handle)) !== false) {
-            if (zip_entry_name($entry) === $fileName) {
-                if (zip_entry_open($handle, $entry)) {
-                    $contend = zip_entry_read($entry, zip_entry_filesize($entry));
-                    zip_entry_close($entry);
-                    zip_close($handle);
-                    return $contend;
+        $contend = false;
+
+        if (is_readable($zipFilePath)) {
+            $handle = zip_open($zipFilePath);
+            if (is_resource($handle)) {
+                while (($entry = zip_read($handle)) !== false) {
+                    if (zip_entry_name($entry) === $fileName) {
+                        if (zip_entry_open($handle, $entry)) {
+                            $contend = zip_entry_read($entry, zip_entry_filesize($entry));
+                            zip_entry_close($entry);
+                            break;
+                        }
+                    }
                 }
+                zip_close($handle);
             }
         }
-        return false;
+        return $contend;
     }
 
     /**
