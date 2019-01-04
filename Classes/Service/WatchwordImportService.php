@@ -171,14 +171,14 @@ class WatchwordImportService
     }
 
     /**
-     * encodes String to UTF-8 encoding
+     * encodes String from Windows-1252 to UTF-8
      * @param string $inputString
      * @return string
      */
     public function encondeStringToUTF8($inputString)
     {
-        if (($encoding = mb_detect_encoding($inputString, mb_list_encodings())) !== 'UTF-8') {
-            $inputString = mb_convert_encoding($inputString, 'UTF-8', $encoding);
+        if (mb_detect_encoding($inputString, 'UTF-8', true) === false) {
+            $inputString = mb_convert_encoding($inputString, 'UTF-8', 'Windows-1252');
         }
         return $inputString;
     }
@@ -276,7 +276,8 @@ class WatchwordImportService
             $result = $this->writeToTypo3TempDir($downloadedData, $this->settingsArray['storageFilePath']);
             // Error msg if file saving fails
             if ($result === false) {
-                $GLOBALS['BE_USER']->simplelog('Writing in TYPO3 temp directory failed in Download Watchwords task', 'daily_watchword', 3);
+                $GLOBALS['BE_USER']->simplelog('Writing in TYPO3 temp directory failed in Download Watchwords task',
+                    'daily_watchword', 3);
                 $flashMessages->savingToT3TempDirFailed();
                 return false;
             }
